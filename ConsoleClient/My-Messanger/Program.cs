@@ -1,11 +1,14 @@
 ﻿using System;
 namespace My_Messanger
 {
-    class Programm
+    class Program
     {
         static void Main()
         {
+            Message msg = new Message();
+
             Console.WriteLine("Начало проекта");
+            Console.WriteLine(msg.ToString());
         }
     }
 }
