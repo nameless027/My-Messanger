@@ -5,16 +5,22 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
+
+// Хранение сообщений
 namespace My_Messanger
 {
-    [Serializable]
+    [Serializable] // Подключение сриализации для преобразовании объекта в поток байтов для передачи. Необходим публичый класс
     public class Message
 
-    {
+    { 
+        // Три поля Сообщения (имя, текс, время отправки):
         public string UserName { get; set; }
         public string MessageText { get; set; }
         public DateTime TimeStamp { get; set; }
      
+
+
+        // Конструктор
         public Message(string userName, string messageText, DateTime timeStamp)
         {
             UserName = userName;
@@ -22,6 +28,8 @@ namespace My_Messanger
             TimeStamp = timeStamp;
         }
 
+
+        //Конструктор
         public Message()
         {
             UserName = "System";
@@ -29,6 +37,7 @@ namespace My_Messanger
             TimeStamp = DateTime.Now;
         }
 
+        // Переопределение выходного текста
         public override string ToString()
         {
             string output = String.Format("{0} <{2}>: {1}", UserName, MessageText, TimeStamp);
