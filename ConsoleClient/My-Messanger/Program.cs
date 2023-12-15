@@ -20,17 +20,48 @@ namespace My_Messanger
 {
     class Program
     {
-        static void Main()
+        private static int MessageID;
+        private static string UserName;
+        private static MessangerClientAPI API = new MessangerClientAPI();
+
+        private static void GetNewMessage()
         {
-            Message msg = new Message("Nameless027", "Privet", DateTime.UtcNow);
-            string output = JsonConvert.SerializeObject(msg); 
+            Message msg = API.GetMessage(MessageID);
+            while (msg != null)
+            {
+                Console.WriteLine(msg);
+                MessageID++;
+                msg = API.GetMessage(MessageID);
+            }
+        }
+        static void Main(string[] agrs)
+        {
+
+            /*Message msg = new Message("Nameless027", "Privet", DateTime.UtcNow);
+            string output = JsonConvert.SerializeObject(msg);
             Console.WriteLine(output);
-            
             Message deserializedMsg = JsonConvert.DeserializeObject<Message>(output);
             Console.WriteLine(deserializedMsg);
+            { "UserName":"Nameless027","MessageText":"Privet","TimeStamp":"2023-12-15T12:12:46.4395632+03:00"}
+            */
+
+            MessageID = 1;
+            Console.WriteLine("ВВедите Ваше имя :");
+            UserName = Console.ReadLine();
+            string MessageText = "";
+            while (MessageText != "exit")
+            {
+                GetNewMessage();
+                MessageText = Console.ReadLine();
+                if (MessageText.Length > 1)
+                {
+                    Message Sendmsg = new Message(UserName, MessageText,DateTime.Now);
+                    API.SendMessage(Sendmsg);
+                }
+            }
 
 
-           
+
 
         }
     }
