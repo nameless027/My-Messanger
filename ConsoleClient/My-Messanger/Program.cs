@@ -55,7 +55,7 @@ namespace My_Messanger
                 MessageText = Console.ReadLine();
                 if (MessageText.Length > 1)
                 {
-                    Message Sendmsg = new Message(UserName, MessageText,DateTime.Now);
+                    Message Sendmsg = new Message(DateTime.Now, UserName, MessageText);
                     API.SendMessage(Sendmsg);
                 }
             }

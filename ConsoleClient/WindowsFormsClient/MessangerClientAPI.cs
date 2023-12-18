@@ -6,11 +6,16 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using My_Messanger;
+using System.IO;
+using System.Net.Http;
+using RestSharp;
 
 namespace My_Messanger
 {
     internal class MessangerClientAPI
     {
+        private static readonly HttpClient client = new HttpClient();
+
          public void TestNewtonsoftJson()
         {
             // тест Json SerializeObject NewtonSoft
@@ -53,6 +58,22 @@ namespace My_Messanger
 
         }
 
+
+
+
+
+       
+        public async Task <Message> GetMessageAsync (int MessageId)
+        {
+            var responseString = await client.GetStringAsync("http://localhost:5063/api/Messanger");
+            if(responseString != null)
+            {
+                Message deserializedMSG = JsonConvert.DeserializeObject<Message>(responseString);
+                return deserializedMSG;
+            }
+            return null;
+        }
+
         public bool SendMessage(Message msg) // отправка сообщения 
         {
             WebRequest request = WebRequest.Create("http://localhost:5063/api/Messanger"); //запрос
@@ -77,5 +98,14 @@ namespace My_Messanger
             return true;
         }
 
+        internal Task<Message> GetNessageHTTPAsync(int messageID)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal Task<Message> GetMessageHTTPAsync(int messageID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SendButton = new System.Windows.Forms.Button();
-            this.MessageLB = new System.Windows.Forms.ListBox();
             this.UserNameTB = new System.Windows.Forms.TextBox();
             this.MessageTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MessageLB = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // SendButton
@@ -47,15 +47,6 @@
             this.SendButton.Text = "Отправить";
             this.SendButton.UseVisualStyleBackColor = true;
             this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
-            // 
-            // MessageLB
-            // 
-            this.MessageLB.FormattingEnabled = true;
-            this.MessageLB.Location = new System.Drawing.Point(12, 12);
-            this.MessageLB.Name = "MessageLB";
-            this.MessageLB.Size = new System.Drawing.Size(755, 290);
-            this.MessageLB.TabIndex = 1;
-            this.MessageLB.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // UserNameTB
             // 
@@ -95,17 +86,26 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // MessageLB
+            // 
+            this.MessageLB.FormattingEnabled = true;
+            this.MessageLB.Location = new System.Drawing.Point(13, 29);
+            this.MessageLB.Name = "MessageLB";
+            this.MessageLB.Size = new System.Drawing.Size(753, 251);
+            this.MessageLB.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 414);
+            this.Controls.Add(this.MessageLB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MessageTB);
             this.Controls.Add(this.UserNameTB);
-            this.Controls.Add(this.MessageLB);
             this.Controls.Add(this.SendButton);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -117,12 +117,12 @@
         #endregion
 
         private System.Windows.Forms.Button SendButton;
-        private System.Windows.Forms.ListBox MessageLB;
         private System.Windows.Forms.TextBox UserNameTB;
         private System.Windows.Forms.TextBox MessageTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ListBox MessageLB;
     }
 }
 
