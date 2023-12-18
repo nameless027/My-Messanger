@@ -30,7 +30,7 @@ namespace My_Messanger
 
 
         //Конструктор
-        public Message(string v, string v1)
+        public Message(string v, string v1, DateTime now)
         {
             UserName = "System";
             MessageText = "Servis is running...";
