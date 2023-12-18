@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCore_Server", "ASPCore_S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsClient", "WindowsFormsClient\WindowsFormsClient.csproj", "{46402907-D9A3-44F9-9733-FB05BCD5065D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMessangerWihtGUI", "..\CosoleMessangerWihtGUI\ConsoleMessangerWihtGUI.csproj", "{D6BAEAF3-0FFB-420A-8EFD-487C4C0E4FE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{46402907-D9A3-44F9-9733-FB05BCD5065D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46402907-D9A3-44F9-9733-FB05BCD5065D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46402907-D9A3-44F9-9733-FB05BCD5065D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BAEAF3-0FFB-420A-8EFD-487C4C0E4FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BAEAF3-0FFB-420A-8EFD-487C4C0E4FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BAEAF3-0FFB-420A-8EFD-487C4C0E4FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BAEAF3-0FFB-420A-8EFD-487C4C0E4FE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
